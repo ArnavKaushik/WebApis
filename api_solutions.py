@@ -87,14 +87,40 @@ def weather(address):
         weather_response = requests.get(weather_station_response.json()['properties']['forecast'])
         if weather_response.status_code != 200:
             return []
+
+        # Create CSV file from the data
+        with open('tmp/weather_data.csv', 'w') as output:
+            output.write(
+                'id,name,startTime,endTime,temperature,temperatureUnit,windSpeed,windDirection,isDaytime,shortForecast,detailedForecast,icon\n'
+            )
+            periods = weather_response.json()['properties']['periods']
+            for i in range(len(periods)):
+                print(periods[i])
+                output.write(
+                    '{},{},{},{},{},{},{},{},{},{},{}\n'.format(
+                        periods[i]['number'],
+                        periods[i]['name'],
+                        periods[i]['startTime'],
+                        periods[i]['endTime'],
+                        periods[i]['temperature'],
+                        periods[i]['temperatureUnit'],
+                        periods[i]['windSpeed'],
+                        periods[i]['windDirection'],
+                        periods[i]['isDaytime'],
+                        periods[i]['shortForecast'],
+                        periods[i]['detailedForecast'],
+                        periods[i]['icon']
+                    )
+                )
+
         return weather_response.json()['properties']['periods']
     except:
         return []
 
 
 if __name__ == '__main__':
-    print("My IP: " + str(my_ip()))
-    print("Shortened link: " + str(shorten("https://www.apple.com/")))
-    print("File link" + str(send_file("sample_file.txt")))
-    print(json.dumps(make_profile(), indent=2))
+    #print("My IP: " + str(my_ip()))
+    #print("Shortened link: " + str(shorten("https://www.apple.com/")))
+    #print("File link" + str(send_file("sample_file.txt")))
+    #print(json.dumps(make_profile(), indent=2))
     print(json.dumps(weather("11 Wall St, New York, NY 10005"), indent=2))

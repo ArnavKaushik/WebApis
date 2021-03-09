@@ -109,7 +109,7 @@ def weather(address):
                         periods[i]['isDaytime'],
                         periods[i]['shortForecast'],
                         "\"" + str(periods[i]['detailedForecast']) + "\"",
-                        periods[i]['icon']
+                        "\"" + str(periods[i]['icon'] + "\""
                     )
                 )
 

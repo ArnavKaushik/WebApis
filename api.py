@@ -40,6 +40,18 @@ Alright, enough setup. Let's call some APIs!
 #                                             #
 # ########################################### #
 
+"""
+We need to make sure we add error handling to our code. 
+For example, if the API doesn't exist, we should handle the error by returning "Invalid API" or something like that.
+Here are some common status codes:
+    - 200: OK (Everything worked out!)
+    - 400: Bad Request (The data and/or parameters might be messed up.)
+    - 401: Unauthorized (None of our APIs here need keys, but keep this in mind.)
+    - 404: Not Found (Check the URL and/or parameters?)
+    - 405: Method Not Allowed (You might be using GET on a POST API, or something along those lines.)
+    - 500: Internal Server Error (This is a server side error, so we can only hope it gets fixed.)
+"""
+
 
 # +-------------------------------------------+
 # |                 Get My IP                 |
@@ -67,7 +79,7 @@ This is a way to create data via an API after either calling it or passing param
 In this case, we're asking the API to create a short link for us, and we'll get it back in the response.
 
 Notice:
-    This API has DDOS protection, so don't be alarmed if the url shows a Cloudflare page.
+    This API has DDOS protection, so don't be alarmed if the shortened url shows a Cloudflare page.
 """
 
 

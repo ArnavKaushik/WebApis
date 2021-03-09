@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import api as api
+import api_solutions as api
 import os
 
 app = Flask(__name__)
@@ -54,7 +54,10 @@ def send_file():
 @app.route('/api/make_profile')
 def make_profile():
     profile = api.make_profile()
-    return render_template('make_profile.html', person=profile)
+    if len(profile) > 0:
+        return render_template('make_profile.html', person=profile, error="null")
+    else:
+        return render_template('make_profile.html', error="Invalid API")
 
 
 @app.route('/api/weather', methods=['GET', 'POST'])
@@ -62,9 +65,11 @@ def weather():
     if request.method == "POST":
         if len(request.form['address']) > 0:
             weather_data = api.weather(str(request.form['address']).strip())
-            return render_template('weather_result.html',
-                                   address=str(request.form['address']).strip(),
-                                   weather=weather_data)
+            if len(weather_data) > 0:
+                return render_template('weather_result.html', address=str(request.form['address']).strip(),
+                                       weather=weather_data, error="null")
+            else:
+                return render_template('weather_result.html', error="Please input a valid address.")
         else:
             return render_template('weather.html')
     else:
@@ -72,4 +77,4 @@ def weather():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

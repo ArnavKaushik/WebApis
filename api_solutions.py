@@ -97,7 +97,7 @@ def weather(address):
             for i in range(len(periods)):
                 print(periods[i])
                 output.write(
-                    '{},{},{},{},{},{},{},{},{},{},{}\n'.format(
+                    '{},{},{},{},{},{},{},{},{},{},{},{}\n'.format(
                         periods[i]['number'],
                         periods[i]['name'],
                         periods[i]['startTime'],
@@ -108,7 +108,7 @@ def weather(address):
                         periods[i]['windDirection'],
                         periods[i]['isDaytime'],
                         periods[i]['shortForecast'],
-                        periods[i]['detailedForecast'],
+                        "\"" + str(periods[i]['detailedForecast']) + "\"",
                         periods[i]['icon']
                     )
                 )
@@ -119,8 +119,8 @@ def weather(address):
 
 
 if __name__ == '__main__':
-    #print("My IP: " + str(my_ip()))
-    #print("Shortened link: " + str(shorten("https://www.apple.com/")))
-    #print("File link" + str(send_file("sample_file.txt")))
-    #print(json.dumps(make_profile(), indent=2))
+    print("My IP: " + str(my_ip()))
+    print("Shortened link: " + str(shorten("https://www.apple.com/")))
+    print("File link" + str(send_file("sample_file.txt")))
+    print(json.dumps(make_profile(), indent=2))
     print(json.dumps(weather("11 Wall St, New York, NY 10005"), indent=2))

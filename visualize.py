@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import api_solutions as api
+import api as api
 import os
 
 app = Flask(__name__)

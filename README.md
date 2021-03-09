@@ -4,7 +4,7 @@ Practice using REST APIs with Python and visualize the results with Flask.
 # Setup
 This project requires Python 3 to be installed on your computer. Please verify that you also have `pip` installed.
 ## Download Source
-To begin using this practice project, please download the code.
+To begin using this practice project, please [download](https://github.com/ArnavKaushik/WebApis/releases/latest) the code.
 You can also use `git clone https://github.com/ArnavKaushik/WebApis.git`.
 
 ## Install Dependencies

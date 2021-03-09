@@ -1,6 +1,6 @@
 import requests
 import json
-import profile
+import src.profile as profile
 
 
 def my_ip():

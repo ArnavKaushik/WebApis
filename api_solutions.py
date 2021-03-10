@@ -12,7 +12,7 @@ Disclaimer:
 
 def my_ip():
     try:
-        my_ip_response = requests.get('https://api.ipify.org?format=json')
+        my_ip_response = requests.get('https://api.ip.sb/jsonip')
         if my_ip_response.status_code == 200:
             return my_ip_response.json()['ip']
         else:

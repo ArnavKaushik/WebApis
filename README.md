@@ -51,7 +51,7 @@ The [`api_minified.py`](https://github.com/ArnavKaushik/WebApis/blob/main/api_mi
 # Credits
 Thank you to the following sites for providing these free and publicly available APIs. The purpose of this project is purely educational, and would not be possible without these them. If you use this project, you agree to be considerate with your API usage and agree not to abuse these services.
 
-* [ipify](https://www.ipify.org/)
+* [ip.sb](https://www.ip.sb/)
 * [cleanuri](https://cleanuri.com/)
 * [file.io](https://www.file.io/)
 * [pipl.ir](https://pipl.ir/)

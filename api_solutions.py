@@ -5,8 +5,8 @@ import profile
 """
 Disclaimer: 
     Do not use a broad try/except statement in production. 
-    The purpose of the try/except statement is to find errors and prevent them from ruining the program.
-    Avoiding any and all errors is not a good idea.
+    The purpose of the try/except statement is to find errors and write code to prevent them from ruining the program.
+    Avoiding any and all errors through a try/except is not a good idea.
 """
 
 
